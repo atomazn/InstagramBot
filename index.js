@@ -12,7 +12,7 @@ const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
 // コンテナIDを取得する関数
 async function postApi() {
     var rakutenRankingUrl = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601?applicationId="
-        + process.env.RAKUTEN_APP_ID + "&sex=1&carrier=1&page=34&affiliateId=" + process.env.RAKUTEN_AFFILIATE_ID;
+        + process.env.RAKUTEN_APP_ID + "&sex=1&carrier=1&page=1&affiliateId=" + process.env.RAKUTEN_AFFILIATE_ID;
     console.log(rakutenRankingUrl);
     const instagramMediaUrl = `https://graph.facebook.com/v19.0/${instaBusinessId}/media?`;
     console.log(instagramMediaUrl);
@@ -30,14 +30,12 @@ async function postApi() {
             var catchcopy = response.data.Items[random].Item.catchcopy;
             var imageUrls = response.data.Items[random].Item.mediumImageUrls;
             var affiliateUrl = response.data.Items[random].Item.affiliateUrl;
-            var affiliateUrl = response.data.Items[random].Item.affiliateUrl;            
             var itemName = response.data.Items[random].Item.itemName;
             var itemPrice = response.data.Items[random].Item.itemPrice;
             console.log(catchcopy);
             console.log(affiliateUrl);
             console.log(itemName);
             console.log(itemPrice);
-            console
 
             let contenaIds = [];
             for (var i = 0; i < imageUrls.length; i++) {
