@@ -11,8 +11,9 @@ const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
 
 // コンテナIDを取得する関数
 async function postApi() {
+    var pageNo = Math.floor(Math.random() * 34) + 1;
     var rakutenRankingUrl = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601?applicationId="
-        + process.env.RAKUTEN_APP_ID + "&sex=1&carrier=1&page=1&affiliateId=" + process.env.RAKUTEN_AFFILIATE_ID;
+        + process.env.RAKUTEN_APP_ID + "&sex=1&carrier=1&page=" + pageNo + "&affiliateId=" + process.env.RAKUTEN_AFFILIATE_ID;
     console.log(rakutenRankingUrl);
     const instagramMediaUrl = `https://graph.facebook.com/v19.0/${instaBusinessId}/media?`;
     console.log(instagramMediaUrl);
